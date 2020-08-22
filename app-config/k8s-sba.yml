@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    kubernetes:
+      discovery:
+        primary-port-name: management
+        service-labels:
+          sba-monitored: true
