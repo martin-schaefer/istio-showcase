@@ -10,7 +10,7 @@ resource "null_resource" "istio" {
   }
 }
 
-# The application namespace
+# The istio system namespace
 resource "kubernetes_namespace" "istio-system-namespace" {
   metadata {
     name = var.namespace

@@ -9,6 +9,9 @@ provider "kubernetes" {
 provider "kubectl" {
 }
 
+provider "helm" {
+}
+
 provider "null" {
   version = "~> 2.1"
 }
@@ -33,6 +36,11 @@ variable "version_k8s-sba" {
 # Istio
 module "istio" {
   source        = "./istio"
+}
+
+# Kiali
+module "kiali" {
+  source        = "./kiali"
 }
 
 # The application namespace
