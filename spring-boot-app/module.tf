@@ -65,11 +65,11 @@ resource "kubernetes_deployment" "spring-boot-app-deployment" {
           name  = "${var.app_name}-container"
           image = "gcr.io/handy-zephyr-272321/${var.app_name}:${var.app_version}"
           port {
-            name = "service-port"
+            name = "http-service"
             container_port = 80
           }
           port {
-            name = "management-port"
+            name = "http-management"
             container_port = 8010
           }
           resources {
@@ -111,12 +111,12 @@ resource "kubernetes_service" "spring-boot-app-service" {
       app = var.app_name
     }
     port {
-      name = "service"
+      name = "http-service"
       port = 80
       node_port = var.node_port
     }
     port {
-      name = "management"
+      name = "http-management"
       port = 8010
     }
     type = "NodePort"

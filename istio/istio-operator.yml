@@ -4,18 +4,8 @@ metadata:
   namespace: ${namespace}
   name: istio-operator
 spec:
+  profile: default
   components:
-    base:
-      enabled: true
-    pilot:
-      enabled: false
-    policy:
-      enabled: false
-    telemetry:
-      enabled: false
-    cni:
-      enabled: false
     ingressGateways:
     - name: istio-ingressgateway
       enabled: false
-    
