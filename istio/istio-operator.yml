@@ -8,13 +8,13 @@ spec:
     base:
       enabled: true
     pilot:
-      enabled: true
+      enabled: false
     policy:
-      enabled: true
+      enabled: false
     telemetry:
-      enabled: true
+      enabled: false
     cni:
-      enabled: true
+      enabled: false
     ingressGateways:
     - name: istio-ingressgateway
       enabled: false

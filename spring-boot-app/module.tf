@@ -72,6 +72,16 @@ resource "kubernetes_deployment" "spring-boot-app-deployment" {
             name = "management-port"
             container_port = 8010
           }
+          resources {
+            requests {
+              cpu = "0.1"
+              memory = ".5G"
+            }
+            limits {
+              cpu = "1"
+              memory = "1G"              
+            }
+          }
           readiness_probe {
             http_get {
               path = "/actuator/health"
